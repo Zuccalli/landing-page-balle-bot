@@ -17,12 +17,9 @@
 
 body {
     font-size: 100%;
-    /*background-image: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);*/
     background-image: linear-gradient(to top, #9b7181 0%, #9b7181 24%, #9b7181 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
-    /*background: black;*/
 }
 
-/*linear-gradient(to right, #9845e8 #33d2ff #dd5789 )*/
 .cabecalho {
     display: flex;
     flex-direction: row;
@@ -45,6 +42,10 @@ body {
     color: white;
     font-weight: 400;
     font-size: 18px;
+}
+
+.cabecalho-menu-item:hover { 
+    border-bottom: white 1px solid; 
 }
 
 .conteudo {
@@ -163,8 +164,18 @@ body {
     border-top: 0.4px solid white;
 }
 
+@keyframes neon-rodape {
+    from {
+        filter: drop-shadow(0 0 0 var(--cor-neon));
+    }
+    to {
+        filter: drop-shadow(0 0 10px var(--cor-neon));
+    }
+}
 .rodape-imagem {
     height: 48px;
     display: block;
     margin: 0 auto;
+    animation: neon-rodape 3s alternate infinite ease-in-out;
+    --cor-neon: white;
 }
